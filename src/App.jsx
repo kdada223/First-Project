@@ -42,7 +42,7 @@ function Main({ write }) {
   return (
     <nav className="window">
       <section className="title-bar">
-        <div className="title-bar-text">준영이의 블로그</div>
+        <div className="title-bar-text">나의 블로그</div>
         <div className="title-bar-controls">
           <button aria-label="Minimize"></button>
           <button aria-label="Maximize"></button>

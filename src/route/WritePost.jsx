@@ -17,7 +17,7 @@ function WritePostWindow({ write, setWrite }) {
       date: new Date().toLocaleDateString(),
     };
     setWrite([...write, newPost]);
-    console.log(write);
+
     navigate('/');
   };
 
