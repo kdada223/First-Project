@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import DeleteCheckModal from '../component/Modal';
 
 function DetailPage({ write }) {
   let { id } = useParams();
   let currentPost = write.find((post) => post.id === id);
   let navigate = useNavigate();
   let goMain = useState(true);
+  let [modal, SetModal] = useState(false);
 
   return (
     <div className="window">
@@ -35,8 +37,25 @@ function DetailPage({ write }) {
       </div>
       <div className="toolbar">
         <button>수정</button>
-        <button onClick={() => {}}>삭제</button>
+        <button
+          onClick={() => {
+            SetModal(true);
+          }}
+        >
+          삭제
+        </button>
       </div>
+
+      {modal === true ? (
+        <DeleteCheckModal
+          onClose={() => SetModal(false)}
+          onConfirm={() => {
+            alert('삭제되었습니다!');
+            SetModal(false);
+            navigate('/');
+          }}
+        />
+      ) : null}
     </div>
   );
 }
