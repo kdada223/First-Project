@@ -6,7 +6,6 @@ function DetailPage({ write }) {
   let { id } = useParams();
   let currentPost = write.find((post) => post.id === id);
   let navigate = useNavigate();
-  let goMain = useState(true);
   let [modal, SetModal] = useState(false);
 
   return (
@@ -49,10 +48,8 @@ function DetailPage({ write }) {
       {modal === true ? (
         <DeleteCheckModal
           onClose={() => SetModal(false)}
-          onConfirm={() => {
-            alert('삭제되었습니다!');
-            SetModal(false);
-            navigate('/');
+          navigate={() => {
+            navigate;
           }}
         />
       ) : null}

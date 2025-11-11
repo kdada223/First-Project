@@ -1,7 +1,11 @@
-function DeleteCheckModal({ onClose, onConfirm }) {
+function DeleteCheckModal({ onClose, navigate }) {
+  let Deletehaddle = () => {
+    alert('삭제됨');
+    onClose();
+    navigate('/');
+  };
   return (
     <>
-      {/* 배경 오버레이 */}
       <div
         style={{
           position: 'fixed',
@@ -17,7 +21,6 @@ function DeleteCheckModal({ onClose, onConfirm }) {
         }}
         onClick={onClose}
       >
-        {/* 모달 창 */}
         <div
           className="window"
           style={{
@@ -43,7 +46,7 @@ function DeleteCheckModal({ onClose, onConfirm }) {
               <br />
               <button
                 className="default"
-                onClick={onConfirm}
+                onClick={Deletehaddle}
                 style={{ marginRight: '10px' }}
               >
                 삭제
