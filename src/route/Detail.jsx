@@ -126,7 +126,7 @@ function CommentSection() {
                   </div>
                 </div>
 
-                {/* 댓글 내용 */}
+                {/* 댓글 내용 d*/}
                 <div
                   style={{
                     padding: '10px',
